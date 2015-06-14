@@ -4,6 +4,8 @@ This tool searches for isomers of a molecule. It is currently limited to
 acyclic compounds with single bonds only.
 There is both a command line and a web interface available.
 
+Click [here](https://just95.github.io/isomers) to see it in action.
+
 ## Installation
 
 To use this application as a command line tool follow the instructions below:
