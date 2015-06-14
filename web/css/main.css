@@ -1,0 +1,130 @@
+a {
+  cursor: pointer;
+}
+
+/* Utility. */
+
+.nowrap {
+  white-space: nowrap;
+}
+
+/* Loading screen. */
+
+#loading .alert {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  width: 100px;
+  margin-left: -50px;
+  transition: top 0.25s;
+  z-index: 10000;
+}
+
+#loading:not(.in) .alert {
+  top: -100px;
+}
+
+#loading .bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: background-color 0.25s;
+  z-index: 10000;
+}
+
+#loading:not(.in) .bg {
+  background-color: rgba(0, 0, 0, 0);
+  pointer-events: none;
+}
+
+/* Menu. */
+
+.nav-pills a:not(:hover) .glyphicon {
+  color: #999;
+}
+
+.page-header .nav-pills {
+  margin-top: -32px;
+}
+
+legend .nav-pills {
+  margin-top: -10px;
+  font-size: 12px;
+}
+
+/* Search results. */ 
+
+#search-results {
+  text-align: center;
+}
+
+.search-result {
+  padding: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 3px;
+  box-shadow: 1px 1px 2px 1px rgba(0,0,0,0.0);
+  margin-top: 25px;
+}
+
+.search-result:hover:not(.collapsing) {
+  box-shadow: 1px 1px 2px 1px rgba(0,0,0,0.4);
+}
+
+.search-result + .search-result:before {
+  content: "";
+  
+  display: block;
+  border-top: 1px solid #eee;
+  margin-top: -25px;
+  margin-bottom: 24px;
+  width: 100%;
+  
+  transition: border-top-color 0.35s;
+}
+
+.search-result:not(.in) + .search-result:before {
+  border-top-color: transparent;
+}
+
+.search-result,
+.search-result-label,
+.search-result .close {
+  transition: all 0.35s;
+}
+
+.search-result:not(:hover) .close,
+.search-result.collapsing .close {
+  opacity: 0;
+}
+
+.search-result-label {
+  float: left;
+  width: calc(100% - 25px);
+  border-width: 0px;
+  border-bottom-width: 1px;
+  border-radius: 0px;
+  box-shadow: none !important;
+}
+
+.search-result:not(:hover) .search-result-label:invalid:not(:focus) {
+  opacity: 0;
+}
+
+.search-result:not(:hover) .search-result-label:valid:not(:focus) {
+  border-bottom-color: transparent;
+}
+
+.search-result svg {
+  max-width: 100%;
+  margin: auto;
+}
+
+/* Modal. */
+
+.modal {
+  overflow-y: auto;  
+}

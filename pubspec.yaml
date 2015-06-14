@@ -1,0 +1,14 @@
+name: isomers
+version: 0.1.0
+author: Justin Andresen <jan.dresen.95@gmail.com>
+description: A command line and web application to search for isomers.
+dependencies:
+  ansicolor: any
+  args: any
+  bootjack: any
+  browser: any
+  crypto: any
+  graphviz: any
+  petitparser: any
+  quiver: any
+  toml: any
