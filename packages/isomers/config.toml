@@ -1,0 +1,59 @@
+[element.H]
+  name = 'hydrogen'
+  number = 1
+  main_group = 1
+  color = {r = 0.75, g = 0.75, b = 0.75} # light gray
+  
+[element.C]
+  name = 'carbon'
+  number = 6
+  main_group = 4
+  color = {r = 0.0, g = 0.0, b = 0.0} # black
+  
+[element.N]
+  name = 'nitrogen'
+  number = 7
+  main_group = 5
+  color = {r = 0.0, g = 0.0, b = 1.0} # blue
+  
+[element.O]
+  name = 'oxygen'
+  number = 8
+  main_group = 6
+  color = {r = 1.0, g = 0.0, b = 0.0} # red
+  
+[element.F]
+  name = 'fluorine'
+  number = 9
+  main_group = 7
+  color = {r = 0.0, g = 1.0, b = 0.0} # light green
+  
+[element.P]
+  name = 'phosphorus'
+  number = 15
+  main_group = 5
+  color = {r = 1.0, g = 0.5, b = 0.0} # orange
+  
+[element.S]
+  name = 'sulfur'
+  number = 16
+  main_group = 6
+  color = {r = 1.0, g = 1.0, b = 0.0} # yellow
+  
+[element.Cl]
+  name = 'chlorine'
+  number = 17
+  main_group = 7
+  color = {r = 0.0, g = 0.5, b = 0.0} # dark green
+
+[element.Br]
+  name = 'bromine'
+  number = 35
+  main_group = 7
+  color = {r = 0.5, g = 0.0, b = 0.0} # dark red
+
+[element.I]
+  name = 'iodine'
+  number = 53
+  main_group = 7
+  color = {r = 0.5, g = 0.0, b = 0.5} # purple

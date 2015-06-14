@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Isomer finder</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon-precomposed" href="favicon-152.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="favicon-144.png">
+
+    <link rel="stylesheet" 
+          href="packages/bootjack/css/bootstrap.min.css" />
+    <link rel="stylesheet" 
+          href="packages/bootjack/css/bootstrap-theme.min.css" />
+          
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <!-- LOADING SCREEN -->
+    <div id="loading" class="in">
+      <div class="bg"></div>
+      <div class="alert alert-warning">
+        <b>Loading...</b>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- HEADER -->
+      <header class="page-header">
+        <h1>Isomer finder</h1>
+        <ul class="nav nav-pills pull-right">
+          <li class="toggle-active">
+            <a title="Options." data-toggle="collapse" href="#options">
+              <i class="glyphicon glyphicon-cog"></i>
+            </a>
+          </li>
+          <li class="dropdown">
+            <a title="Import/Export." data-toggle="dropdown">
+              <i class="glyphicon glyphicon-chevron-down"></i>
+            </a>
+            <ul class="dropdown-menu pull-right">
+              <li>
+                <a id="export">
+                  <i class="glyphicon glyphicon-export"></i>
+                  Export
+                </a>
+              </li>
+              <li>
+                <a id="import">
+                  <i class="glyphicon glyphicon-import"></i>
+                  Import
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </header>
+
+      <!-- SEARCH FORM -->
+      <form id="search-form" action="javascript:void(0)">
+        <div class="form-group">
+          <div class="input-group">
+            <input type="text" class="form-control"
+                   placeholder="Sum formula..." />
+            <div class="input-group-btn">
+              <button type="submit" class="btn btn-primary">
+                <i class="glyphicon glyphicon-search"></i>
+              </button>
+            </div>
+          </div>
+          <label class="control-label"></label>
+        </div>
+      </form>
+
+      <!-- OPTIONS -->
+      <div id="options" class="collapse">
+        <!-- SEARCH OPTIONS -->
+        <fieldset>
+          <legend>Search options</legend> 
+          <label>
+            <input id="enable-add-hydrogen" type="checkbox" checked /> 
+            Add hydrogen atoms in separate step.
+            <small class="text-muted nowrap">(Better performance)</small>
+          </label>
+        </fieldset>
+
+        <br />
+
+        <!-- RENDERING OPTIONS -->
+        <fieldset>
+          <legend>
+            Rendering options
+            <ul class="nav nav-pills pull-right">
+              <li>
+                <a id="rerender" title="Redraw">
+                  <i class="glyphicon glyphicon-refresh"></i>
+                </a>
+              </li>
+            </ul>
+          </legend> 
+          <label>
+            <input id="enable-color" type="checkbox" checked /> 
+            Colorize element symbols.
+          </label>
+          <br />
+          <label>
+            <input id="enable-sticky-hydrogen" type="checkbox" checked /> 
+            Create no individual nodes for hydrogen atoms.
+          </label>
+          <br />
+          <label>
+            <input id="enable-tree-rendering" type="checkbox" /> 
+            Draw tree structure.
+          </label>
+        </fieldset>
+      </div>
+
+      <!-- OUTPUT -->
+      <div id="search-results">
+      </div>
+
+      <!-- FOOTER -->
+      <footer class="text-center">
+        <hr />
+        <p>
+          &copy; 2015 Justin Andresen. 
+          <a data-toggle="modal" data-target="#license-modal">
+            MIT license
+          </a>
+        </p>
+        <p>
+          <a href="https://github.com/just95/isomers">GitHub</a>
+          &middot;
+          <a href="https://github.com/just95/isomers/issues">Issues</a>
+        </p>
+      </footer>
+    </div>
+
+    <!-- LICENSE MODAL -->
+    <div class="modal fade" id="license-modal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title">MIT license</h4>
+          </div>
+          <div class="modal-body">
+            <p>
+              <b>
+                &copy; 2015 
+                <a href="https://github.com/just95" target="_blank">
+                  Justin Andresen
+                </a>
+                &lt;<a href="mailto:jan.dresen.95@gmail.com">
+                  jan.dresen.95@gmail.com
+                </a>&gt;
+              </b>
+            </p>
+
+            <p>
+              Permission is hereby granted, free of charge, to any person 
+              obtaining a copy of this software and associated documentation 
+              files (the "Software"), to deal in the Software without 
+              restriction, including without limitation the rights to use, 
+              copy, modify, merge, publish, distribute, sublicense, and/or sell
+              copies of the Software, and to permit persons to whom the 
+              Software is furnished to do so, subject to the following 
+              conditions:
+            </p>
+
+            <p>
+              The above copyright notice and this permission notice shall be 
+              included in all copies or substantial portions of the Software.
+            </p>
+
+            <p>
+              THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+              EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES 
+              OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+              NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT 
+              HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, 
+              WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+              OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
+              DEALINGS IN THE SOFTWARE.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">
+              OK
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="application/dart" src="main.dart"></script>
+    <script type="text/javascript" src="packages/browser/dart.js"></script>
+
+    <script src="packages/graphviz/graphviz.js"></script>
+  </body>
+</html>
